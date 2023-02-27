@@ -1,0 +1,103 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  display: flex;
+  margin-right: 20px;
+  align-items: center;
+  padding: 0 10px;
+  justify-content: end;
+  min-height: 100vh;
+}
+.wrapper-calender{
+  width: 350px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+.wrapper-calender header{
+  display: flex;
+  align-items: center;
+  padding: 25px 30px 10px;
+  justify-content: space-between;
+}
+header .icons-calender{
+  display: flex;
+}
+header .icons-calender span{
+  height: 38px;
+  width: 38px;
+  margin: 0 1px;
+  cursor: pointer;
+  color: #878787;
+  text-align: center;
+  line-height: 38px;
+  font-size: 1.9rem;
+  user-select: none;
+  border-radius: 50%;
+}
+.icons-calender span:last-child{
+  margin-right: -10px;
+}
+header .icons-calender span:hover{
+  background: #f2f2f2;
+}
+header .current-date-calender{
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+.calendar-calender{
+  padding: 20px;
+}
+.calendar-calender ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+}
+.calendar-calender .days-calender{
+  margin-bottom: 20px;
+}
+.calendar-calender li{
+  color: #333;
+  width: calc(100% / 7);
+  font-size: 1.07rem;
+}
+.calendar-calender.weeks-calender li{
+  font-weight: 500;
+  cursor: default;
+}
+.calendar-calender .days-calender li{
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  margin-top: 30px;
+}
+.days-calender li.inactive{
+  color: #aaa;
+}
+.days-calender li.active{
+  color: #fff;
+}
+.days-calender li::before{
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.days-calender li.active::before{
+  background: #9B59B6;
+}
+.days-calender li:not(.active):hover::before{
+  background: #f2f2f2;
+}
